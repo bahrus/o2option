@@ -6,8 +6,8 @@ export function camelToKebab(s: string) {
     return s.split(ctlRe).join('-').toLowerCase();
 }
 
-export function o2option<T>(item: T, config: Config<T>): string{
-    const {dataProps, valProp} = config;
+export function o2option<T>(item: T, config: Config<T>){
+    const {dataProps, valProp, children, textProp} = config;
     let dataAttrs = '';
     if(Array.isArray(dataProps)){
         dataAttrs = dataProps.map(x => {
@@ -23,5 +23,15 @@ export function o2option<T>(item: T, config: Config<T>): string{
             valueAttr = ` value="${val}"`;
         }
     }
+    let innerHTML = ``;
+    if(children !== undefined){
+        
+    }else if(textProp){
+        const sVal = item[textProp];
+        if(sVal !== undefined && sVal !== null){
+            innerHTML = sVal.toString(); //todo sanitize
+        }
+    }   
+   
     return html `<option ${dataAttrs}></option>`
 }

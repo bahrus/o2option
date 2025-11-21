@@ -4,7 +4,7 @@ export function camelToKebab(s) {
     return s.split(ctlRe).join('-').toLowerCase();
 }
 export function o2option(item, config) {
-    const { dataProps, valProp } = config;
+    const { dataProps, valProp, children, textProp } = config;
     let dataAttrs = '';
     if (Array.isArray(dataProps)) {
         dataAttrs = dataProps.map(x => {
@@ -19,6 +19,15 @@ export function o2option(item, config) {
         const val = item[valProp];
         if (val !== undefined && val !== null) {
             valueAttr = ` value="${val}"`;
+        }
+    }
+    let innerHTML = ``;
+    if (children !== undefined) {
+    }
+    else if (textProp) {
+        const sVal = item[textProp];
+        if (sVal !== undefined && sVal !== null) {
+            innerHTML = sVal.toString(); //todo sanitize
         }
     }
     return html `<option ${dataAttrs}></option>`;
