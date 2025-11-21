@@ -9,7 +9,7 @@
 		"forceConsistentCasingInFileNames": true
 	},
 	"files":[
-		"o2option.ts"
+		"a2options.ts"
 	],
 	"exclude":[
 		"node_modules"

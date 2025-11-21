@@ -1,5 +1,5 @@
 export interface Config<T> {
-    dataProps?: (keyof T)[],
+    dataProps?: (keyof T & string)[],
     valProp?: keyof T,
     textProp?: keyof T,
     useTable?: boolean,
