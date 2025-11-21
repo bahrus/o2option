@@ -1,0 +1,18 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module":"ESNext",
+		"sourceMap": false,
+		"experimentalDecorators": false,
+		"newLine": "LF",
+		"strict": true,
+		"forceConsistentCasingInFileNames": true
+	},
+	"files":[
+		"o2option.ts"
+	],
+	"exclude":[
+		"node_modules"
+	]
+
+}

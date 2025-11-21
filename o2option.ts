@@ -1,5 +1,5 @@
 import { Config } from "./types";
 
-export function o2option<T>(arr: T[], config: Config<T>){
+export function o2option<T>(item: T, config: Config<T>): string{
 
 }
