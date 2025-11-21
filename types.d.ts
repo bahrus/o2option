@@ -3,5 +3,6 @@ export interface Config<T> {
     valProp?: keyof T,
     textProp?: keyof T,
     useTable?: boolean,
-    microDataProps?: (keyof T)[],
+    microdataProps?: (keyof T)[],
+    //detailSubProps?: {[key: keyof T]: Config}
 }
