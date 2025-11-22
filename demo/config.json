@@ -1,6 +1,7 @@
 {
     "dataProps": ["scientificClassification"],
     "children": {
-        "emoji": {}
+        "emoji": {},
+        "displayName": {}
     }
 }
