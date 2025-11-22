@@ -15,6 +15,13 @@
   "type": "module",
   "main": "o2option.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "playwright test",
+    "serve": "node ./node_modules/spa-ssi/serve.js",
+    "safari": "npx playwright wk http://localhost:8000",
+    "update": "ncu -u && npm install"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "spa-ssi": "0.0.23"
   }
 }
