@@ -14,7 +14,7 @@ export function o2option(item, config) {
             return `${camelToKebab(x)}='${typeof val === 'object' ? JSON.stringify(val) : val}'`;
         }).join(' ');
     }
-    let staticAttrsOutput = staticAttrs?.map(x => `${x[0]}="${x[1]}"`).join('') ?? '';
+    const staticAttrsOutput = staticAttrs?.map(x => `${x[0]}="${x[1]}"`).join(' ') ?? '';
     let valueAttr = '';
     if (valProp !== undefined) {
         const val = item[valProp];
@@ -54,7 +54,8 @@ export function o2option(item, config) {
                     throw 'NI';
                 }
             }
-            childS.push(`<${tagName} ${attrS.join(' ')}>${val}</${tagName}>`);
+            const staticAttrsOutput = staticAttrs?.map(x => `${x[0]}="${x[1]}"`).join(' ') ?? '';
+            childS.push(`<${tagName} ${attrS.join(' ')} ${staticAttrsOutput}>${val}</${tagName}>`);
         }
         innerHTML = childS.join('');
     }

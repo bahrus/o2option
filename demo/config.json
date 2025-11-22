@@ -2,7 +2,9 @@
     "dataProps": ["scientificClassification", "binomialName", "population"],
     "staticAttrs": [["itempropmap", "animal-map"], ["itemscope", ""]],
     "children": {
-        "emoji": {},
+        "emoji": {
+            "staticAttrs": [["aria-hidden", "true"]]
+        },
         "displayName": {}
     }
 }

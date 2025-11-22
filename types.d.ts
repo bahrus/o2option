@@ -13,5 +13,5 @@ export interface Config<T> {
 
 export interface Child<T> {
     attrs?: {[key: string]: string | string[]}
-    staticAttrs?: string[]
+    staticAttrs?: [attrName, attrVal][]
 }
