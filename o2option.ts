@@ -9,7 +9,7 @@ export function camelToKebab(s: string) {
 
 
 export function o2option<T>(item: T, config: Config<T>){
-    const {dataProps, valProp, children, textProp} = config;
+    const {dataProps, valProp, children, textProp, staticAttrs} = config;
     let dataAttrs = '';
     if(Array.isArray(dataProps)){
         dataAttrs = dataProps.map(x => {
@@ -18,6 +18,7 @@ export function o2option<T>(item: T, config: Config<T>){
             return `${camelToKebab(x)}='${typeof val === 'object' ? JSON.stringify(val) : val}'`;
         }).join(' ');
     }
+    let staticAttrsOutput = staticAttrs?.map(x => `${x[0]}="${x[1]}"`).join('') ?? '';
     let valueAttr = '';
     if(valProp !== undefined){
         const val = item[valProp];
@@ -66,5 +67,5 @@ export function o2option<T>(item: T, config: Config<T>){
         }
     }   
    
-    return html `<option ${dataAttrs}>${innerHTML}</option>`
+    return html `<option ${dataAttrs} ${staticAttrsOutput}>${innerHTML}</option>`
 }

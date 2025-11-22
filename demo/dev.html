@@ -6,6 +6,20 @@
     <title>Document</title>
 </head>
 <body>
+    <script type=itempropmap id=animal-map>
+    {
+        "data-scientific-classification": {
+            "mapsTo": "taxonomy", 
+            "instanceOf": "Object"
+        },
+        "data-binomial-name": "species",
+        "data-population": {
+            "mapsTo": "totalCount",
+            "instanceOf": "Number"
+        },
+        "value": "key"
+    }
+    </script>
     <select itemscope=animals>
         <button>
             <selectedcontent></selectedcontent>
