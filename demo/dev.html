@@ -32,7 +32,7 @@
     <script type=module>
         import {a2options} from '/a2options.js';
         import data from './data.mjs' with {type: 'json'}
-        import config from './config.json' with {type: 'json'}
+        import config from './config.mjs' with {type: 'json'}
         console.log(data, config);
         const fragments = [];
         const encoder = s => fragments.push(s);

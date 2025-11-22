@@ -10,7 +10,8 @@ export interface Animal {
         Class: string
         Order:	string
         Family:	string
-        Genus:	string   
-        Species: string
+        Genus?:	string   
+        Species?: string
+        Subfamily?: string
     }
 }

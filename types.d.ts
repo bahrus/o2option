@@ -6,7 +6,7 @@ export interface Config<T> {
     valProp?: keyof T
     textProp?: keyof T
     //useTable?: boolean,
-    children?: { [K in keyof T & string]: Child<T> }
+    children?: Partial<{ [K in keyof T & string]: Child<T> }>
     staticAttrs?: [attrName, attrVal][]
     //detailSubProps?: {[key: keyof T]: Config}
 }
