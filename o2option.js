@@ -42,16 +42,20 @@ export function o2option(item, config) {
                 case 'number':
                     tagName = 'data';
                     break;
+                case 'object':
+                    continue;
             }
             const childConfig = children[childKey];
             const { attrs, staticAttrs } = childConfig;
-            const attrS = [];
+            const attrS = [`itemprop=${childKey}`];
             if (attrs !== undefined) {
                 for (const attrKey in attrs) {
                     throw 'NI';
                 }
             }
+            childS.push(`<${tagName} ${attrS.join(' ')}>${val}</${tagName}>`);
         }
+        innerHTML = childS.join('');
     }
     else if (textProp) {
         const sVal = item[textProp];
@@ -59,5 +63,5 @@ export function o2option(item, config) {
             innerHTML = sVal.toString(); //todo sanitize
         }
     }
-    return html `<option ${dataAttrs}></option>`;
+    return html `<option ${dataAttrs}>${innerHTML}</option>`;
 }

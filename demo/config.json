@@ -1,3 +1,6 @@
 {
-    "dataProps": ["scientificClassification"]
+    "dataProps": ["scientificClassification"],
+    "children": {
+        "emoji": {}
+    }
 }
