@@ -4,7 +4,7 @@
     },
     "files.exclude": {
         "**/*.html": {"when": "$(basename).mjs"},
-        "**/*.json": {"when": "$(basename).ext"}
+        "**/*.json": {"when": "$(basename).mjs"}
     },
     "explorer.fileNesting.enabled": true
 }
