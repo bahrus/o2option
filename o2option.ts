@@ -1,10 +1,12 @@
-import { Config } from "./types";
+import { Child, Config } from "./types";
 const html = String.raw;
 
 const ctlRe = /(?=[A-Z])/;
 export function camelToKebab(s: string) {
     return s.split(ctlRe).join('-').toLowerCase();
 }
+
+
 
 export function o2option<T>(item: T, config: Config<T>){
     const {dataProps, valProp, children, textProp} = config;
@@ -25,7 +27,34 @@ export function o2option<T>(item: T, config: Config<T>){
     }
     let innerHTML = ``;
     if(children !== undefined){
-        
+        const childS: string[] = [];
+        for(const childKey in children){
+            const val = (<any>item)[childKey];
+            if(val === null) continue;
+            let tagName: string;
+            switch(typeof val){
+                case 'bigint':
+                case 'function':
+                case 'symbol':
+                case 'undefined':
+                    continue;
+                case 'string':
+                    tagName = 'span';
+                    break;
+                case 'boolean':
+                case 'number':
+                    tagName = 'data';
+                    break;
+            }
+            const childConfig = (<any>children)[childKey] as Child<T>;
+            const {attrs, staticAttrs} = childConfig;
+            const attrS: string[] = [];
+            if(attrs !== undefined){
+                for(const attrKey in attrs){
+                    throw 'NI';
+                }
+            }
+        }
     }else if(textProp){
         const sVal = item[textProp];
         if(sVal !== undefined && sVal !== null){

@@ -23,6 +23,35 @@ export function o2option(item, config) {
     }
     let innerHTML = ``;
     if (children !== undefined) {
+        const childS = [];
+        for (const childKey in children) {
+            const val = item[childKey];
+            if (val === null)
+                continue;
+            let tagName;
+            switch (typeof val) {
+                case 'bigint':
+                case 'function':
+                case 'symbol':
+                case 'undefined':
+                    continue;
+                case 'string':
+                    tagName = 'span';
+                    break;
+                case 'boolean':
+                case 'number':
+                    tagName = 'data';
+                    break;
+            }
+            const childConfig = children[childKey];
+            const { attrs, staticAttrs } = childConfig;
+            const attrS = [];
+            if (attrs !== undefined) {
+                for (const attrKey in attrs) {
+                    throw 'NI';
+                }
+            }
+        }
     }
     else if (textProp) {
         const sVal = item[textProp];
