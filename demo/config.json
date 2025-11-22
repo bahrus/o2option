@@ -1,5 +1,5 @@
 {
-    "dataProps": ["scientificClassification"],
+    "dataProps": ["scientificClassification", "binomialName", "population"],
     "staticAttrs": [["itempropmap", "animal-map"], ["itemscope", ""]],
     "children": {
         "emoji": {},
