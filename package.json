@@ -18,10 +18,12 @@
     "test": "playwright test",
     "serve": "node ./node_modules/spa-ssi/serve.js",
     "safari": "npx playwright wk http://localhost:8000",
-    "update": "ncu -u && npm install"
+    "update": "ncu -u && npm install",
+    "build": "node ./node_modules/majestic-build/index.js"
   },
   "devDependencies": {
     "@playwright/test": "1.56.1",
+    "majestic-build": "0.0.0",
     "spa-ssi": "0.0.25"
   }
 }
