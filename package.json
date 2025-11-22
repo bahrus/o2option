@@ -22,6 +22,6 @@
   },
   "devDependencies": {
     "@playwright/test": "1.56.1",
-    "spa-ssi": "0.0.23"
+    "spa-ssi": "0.0.24"
   }
 }
