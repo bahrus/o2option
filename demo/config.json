@@ -3,8 +3,10 @@
     "staticAttrs": [["itempropmap", "animal-map"], ["itemscope", ""]],
     "children": {
         "emoji": {
-            "staticAttrs": [["aria-hidden", "true"]]
+            "staticAttrs": [["class", "icon"], ["aria-hidden", "true"]]
         },
-        "displayName": {}
+        "displayName": {
+            "staticAttrs": [["class", "option-label"]]
+        }
     }
 }
