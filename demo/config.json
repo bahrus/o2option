@@ -1,12 +1,39 @@
 {
-    "dataProps": ["scientificClassification", "binomialName", "population"],
-    "staticAttrs": [["itempropmap", "animal-map"], ["itemscope", ""]],
-    "children": {
-        "emoji": {
-            "staticAttrs": [["class", "icon"], ["aria-hidden", "true"]]
-        },
-        "displayName": {
-            "staticAttrs": [["class", "option-label"]]
-        }
-    }
+   "dataProps": [
+      "scientificClassification",
+      "binomialName",
+      "population"
+   ],
+   "staticAttrs": [
+      [
+         "itempropmap",
+         "animal-map"
+      ],
+      [
+         "itemscope",
+         ""
+      ]
+   ],
+   "children": {
+      "emoji": {
+         "staticAttrs": [
+            [
+               "class",
+               "icon"
+            ],
+            [
+               "aria-hidden",
+               "true"
+            ]
+         ]
+      },
+      "displayName": {
+         "staticAttrs": [
+            [
+               "class",
+               "option-label"
+            ]
+         ]
+      }
+   }
 }
