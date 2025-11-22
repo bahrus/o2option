@@ -1,6 +1,6 @@
 {
     "dataProps": ["scientificClassification"],
-    "staticAttrs": [["itempropmap", "animal-map"]],
+    "staticAttrs": [["itempropmap", "animal-map"], ["itemscope", ""]],
     "children": {
         "emoji": {},
         "displayName": {}
